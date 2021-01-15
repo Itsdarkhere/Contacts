@@ -125,7 +125,6 @@ public class Main {
                             break;
                         }
 
-
                     }
                     break;
 
@@ -180,7 +179,6 @@ public class Main {
 
 
                 case "exit":
-                    //ends the program
                     on = false;
                     break;
 
