@@ -13,6 +13,7 @@ class SerializationMethods{
         objectOutput.close();
 
     }
+
     //this reconstructs the "object" from a file
     public Object deserialize(String fileName) throws IOException, ClassNotFoundException{
         FileInputStream input = new FileInputStream(fileName);
@@ -21,7 +22,6 @@ class SerializationMethods{
         Object object = objectInput.readObject();
         objectInput.close();
 
-        //here we give back the object
         return object;
 
     }

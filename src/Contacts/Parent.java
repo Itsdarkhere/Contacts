@@ -18,21 +18,20 @@ class Parent implements Serializable {
 
 
     String getFields() {
-        String allField = phoneNumber+organizationName+address+birthDate+gender+name+lastName;
-        return allField;
+        return phoneNumber +  organizationName + address + birthDate + gender + name + lastName;
 
     }
-    void setField(String field, String newValue) {
+    void setField(String field, String newValue) {}
 
+    void modifyRecord(Scanner scanner, Main.PhoneBook phoneBook) {}
 
-    }
-    void modifyRecord(Scanner scanner, Main.PhoneBook phoneBook) {
-
-    }
     <T> T getField(String field) {
+
         return (T) null;
     }
+
     String getFullName() {
+
         return name + " " +  lastName;
     }
 

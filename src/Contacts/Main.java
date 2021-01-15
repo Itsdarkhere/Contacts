@@ -3,7 +3,6 @@ package Contacts;
 
 
 import java.io.*;
-import java.lang.reflect.Field;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,25 +13,22 @@ public class Main {
         Main main = new Main();
         main.run();
 
-
     }
 
     public void run() throws IOException {
+
         ArrayList<Parent> contacts = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         PhoneBook phoneBook = new PhoneBook(contacts);
+        Boolean on = true;
 
-        //Reconstructing saved records from the file to the phonebook
         SerializationMethods methods = new SerializationMethods();
-        //to empty the file
-        methods.serialize(phoneBook, "C:\\HyperSkill\\text");
+        //Reconstructing saved records from the file to the phonebook
         try {
             phoneBook = (PhoneBook) methods.deserialize("C:\\HyperSkill\\text");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("No phonebook found.");
         }
-
-        Boolean on = true;
 
 
         while (on) {
@@ -146,7 +142,7 @@ public class Main {
                             }
                         }
                         //printing all matching contacts
-                        System.out.printf("Found %d results:", list.size());
+                        System.out.printf("Found %d results: ", list.size());
                         int count = 1;
                         for (Parent p: list) {
                             System.out.println(count + ". " + p.getFullName());
@@ -176,7 +172,6 @@ public class Main {
                     }
 
                     break;
-
 
                 case "count":
                     System.out.format("The Phone Book has %d records. \n"

@@ -91,7 +91,7 @@ class Person extends Parent{
     }
 
     @Override
-    void modifyRecord(Scanner scanner, Main.PhoneBook phoneBook) {
+    void modifyRecord (Scanner scanner, Main.PhoneBook phoneBook) {
         boolean on = true;
         while (on) {
             System.out.println("\n[record] Enter action (edit, delete, menu): ");

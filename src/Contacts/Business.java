@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 //class for the business contacts
 class Business extends Parent {
+
     private static final long serialVersionUID = 7L;
     String phoneNumber;
     String organizationName;
