@@ -25,7 +25,7 @@ public class Main {
         SerializationMethods methods = new SerializationMethods();
         //Reconstructing saved records from the file to the phonebook
         try {
-            phoneBook = (PhoneBook) methods.deserialize("C:\\HyperSkill\\text");
+            phoneBook = (PhoneBook) methods.deserialize("Contacts.txt");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("No phonebook found.");
         }
@@ -118,7 +118,7 @@ public class Main {
                             Parent parent = phoneBook.getContact(chosenNumber - 1);
                             System.out.println(parent);
                             parent.modifyRecord(scanner, phoneBook);
-                            methods.serialize(phoneBook, "C:\\HyperSkill\\text");
+                            methods.serialize(phoneBook, "Contacts.txt");
 
                         } catch (ArrayIndexOutOfBoundsException e) {
                             System.out.println("Record does not exist");
@@ -161,7 +161,7 @@ public class Main {
                             Parent parent = phoneBook.getContact(number - 1);
                             System.out.println(parent);
                             parent.modifyRecord(scanner, phoneBook);
-                            methods.serialize(phoneBook, "C:\\HyperSkill\\text");
+                            methods.serialize(phoneBook, "Contacts.txt");
                             searching = false;
                             break;
 
@@ -190,35 +190,6 @@ public class Main {
 
 
 
-    }
-
-    //Stores the list containing all contacts and has methods to help access them
-    public static class PhoneBook implements Serializable {
-        private static final long serialVersionUID = 7L;
-        ArrayList<Parent> list;
-
-        PhoneBook(ArrayList<Parent> list) {
-            this.list = list;
-        }
-
-        void addContact(Parent parent) {
-            list.add(parent);
-            System.out.println("The record added.");
-        }
-        void removeContact(Parent parent) {
-            list.remove(parent);
-            System.out.println("The record removed!");
-        }
-
-        Parent getContact(int index) {
-
-            return list.get(index);
-        }
-
-        Integer getListSize() {
-
-            return list.size();
-        }
     }
 
 }

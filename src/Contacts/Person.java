@@ -17,7 +17,7 @@ class Person extends Parent{
 
     @Override
     String getFields() {
-        return phoneNumber+birthDate+gender+name+lastName;
+        return phoneNumber + birthDate + gender + name + lastName;
     }
     @Override
     void setField(String field, String newValue) {
@@ -91,7 +91,7 @@ class Person extends Parent{
     }
 
     @Override
-    void modifyRecord (Scanner scanner, Main.PhoneBook phoneBook) {
+    void modifyRecord (Scanner scanner, PhoneBook phoneBook) {
         boolean on = true;
         while (on) {
             System.out.println("\n[record] Enter action (edit, delete, menu): ");

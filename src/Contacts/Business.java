@@ -1,6 +1,6 @@
 package Contacts;
 
-import java.lang.reflect.Field;
+
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
@@ -14,11 +14,11 @@ class Business extends Parent {
     String address;
     LocalDateTime edited;
     LocalDateTime created;
-    Field[] fields = Business.class.getFields();
+
 
     @Override
     String getFields() {
-        return phoneNumber+organizationName+address;
+        return phoneNumber + organizationName + address;
     }
     @Override
     void setField(String field, String newValue) {
@@ -78,7 +78,7 @@ class Business extends Parent {
     }
 
     @Override
-    void modifyRecord(Scanner scanner, Main.PhoneBook phoneBook) {
+    void modifyRecord(Scanner scanner, PhoneBook phoneBook) {
         boolean on = true;
         while (on) {
             System.out.println("\n[record] Enter action (edit, delete, menu): ");

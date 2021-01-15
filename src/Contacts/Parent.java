@@ -23,7 +23,7 @@ class Parent implements Serializable {
     }
     void setField(String field, String newValue) {}
 
-    void modifyRecord(Scanner scanner, Main.PhoneBook phoneBook) {}
+    void modifyRecord(Scanner scanner, PhoneBook phoneBook) {}
 
     <T> T getField(String field) {
 
