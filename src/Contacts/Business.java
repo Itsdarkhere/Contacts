@@ -21,7 +21,7 @@ class Business extends Parent {
         return phoneNumber + organizationName + address;
     }
     @Override
-    void setField(String field, String newValue) {
+    void setField (String field, String newValue) {
         switch (field) {
             case "phoneNumber":
                 this.phoneNumber = newValue;
@@ -80,6 +80,7 @@ class Business extends Parent {
     @Override
     void modifyRecord(Scanner scanner, PhoneBook phoneBook) {
         boolean on = true;
+
         while (on) {
             System.out.println("\n[record] Enter action (edit, delete, menu): ");
             String action = scanner.nextLine();

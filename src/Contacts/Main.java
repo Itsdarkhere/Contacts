@@ -7,7 +7,18 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+/*
+* Welcome friend!
+*
+* This program's parts in a nutshell:
+*
+* Main class .run contains the "engine" of the application.
+* Parent is the parent of classes Person and Business.
+* PhoneBook stores both Person and Business objects.
+* SerializationMethods serializes the phonebook object into the Contacts.txt and deserializes from it.
+*
+*
+ */
 public class Main {
     public static void main(String[] args) throws IOException {
         Main main = new Main();
@@ -32,16 +43,17 @@ public class Main {
 
 
         while (on) {
-            System.out.println("\n[menu] Enter action (add, list, search, count, " +
-                    "exit):");
+            System.out.println("\n[menu] Enter action (add, list, search, count, exit):");
             String action = scanner.nextLine();
+
             switch (action) {
 
                 case "add":
                     System.out.println("\nEnter the type (person, organization): ");
                     String type = scanner.nextLine();
 
-                    if (type.equals("person")) {
+                    if (type.equalsIgnoreCase("person")) {
+
                         System.out.println("Enter the name: ");
                         String name = scanner.nextLine();
                         System.out.println("Enter the surname: ");
@@ -75,7 +87,7 @@ public class Main {
                         phoneBook.addContact(person);
                         methods.serialize(phoneBook, "C:\\HyperSkill\\text");
 
-                    } else {
+                    } else if (type.equalsIgnoreCase("organization")){
                         System.out.println("Enter the organization name: ");
                         String organizationName = scanner.nextLine();
                         System.out.println("Enter the address: ");
@@ -152,17 +164,17 @@ public class Main {
                         System.out.println("[search] Enter action ([number], back, again): ");
                         String actionInSearch = scanner.nextLine();
                         if (actionInSearch.equals("back")) {
-                            searching = false;
                             break;
+
                         } else if (actionInSearch.equals("again")) {
                             break;
+
                         } else {
                             int number = Integer.parseInt(actionInSearch);
                             Parent parent = phoneBook.getContact(number - 1);
                             System.out.println(parent);
                             parent.modifyRecord(scanner, phoneBook);
                             methods.serialize(phoneBook, "Contacts.txt");
-                            searching = false;
                             break;
 
 

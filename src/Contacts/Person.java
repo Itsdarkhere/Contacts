@@ -20,7 +20,7 @@ class Person extends Parent{
         return phoneNumber + birthDate + gender + name + lastName;
     }
     @Override
-    void setField(String field, String newValue) {
+    void setField (String field, String newValue) {
         switch (field) {
             case "phoneNumber":
                 this.phoneNumber = newValue;
